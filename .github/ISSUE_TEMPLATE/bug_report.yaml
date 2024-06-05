@@ -6,13 +6,22 @@ body:
   attributes:
     value: >
       #### Before submitting a bug, please make sure the issue hasn't been already addressed by searching through [the existing and past issues](https://github.com/triton-lang/triton/issues).
+
 - type: textarea
   attributes:
     label: 🐛 Describe the bug
     description: |
       Please provide a clear and concise description of what the bug is.
+    placeholder: |
+      A clear and concise description of what the bug is.
+  validations:
+    required: true
 
-      If relevant, add a minimal example so that we can reproduce the error by running the code. It is very important for the snippet to be as succinct (minimal) as possible, so please take time to trim down any irrelevant code to help us debug efficiently. We are going to copy-paste your code and we expect to get the same result as you did: avoid any external data, and include the relevant imports, etc. For example:
+- type: textarea
+  attributes:
+    label: Reproducible Script
+    description: |
+      If applicable, add a minimal example so that we can reproduce the error by running the code. It is very important for the snippet to be as succinct (minimal) as possible, so please take time to trim down any irrelevant code to help us debug efficiently. We are going to copy-paste your code and we expect to get the same result as you did: avoid any external data, and include the relevant imports, etc. For example:
 
       ```python
 
@@ -67,26 +76,14 @@ body:
       The error message you got, with the full traceback.
       ```
   validations:
-    required: true
+    required: false
+
+
 - type: textarea
   attributes:
     label: Versions
     description: |
-      Please provide 
-
-      1. Library Versions, for example
-
-      ```bash
-      triton==2.3.1
-      torch==2.3.0
-      ```
-
-      2. Hardware Spec, for example
-
-      ```bash
-      NVIDIA A100 with 80GB HBM
-      ```
-
+      Please provide triton, torch, hardware, and other necessary versions to reproduce the bug.
   validations:
     required: true
 - type: markdown
